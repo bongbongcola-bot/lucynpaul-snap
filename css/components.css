@@ -1,0 +1,337 @@
+/* 화면 구성 요소: 버튼, 상단 영상, 소개, 장소, 문의 */
+
+/* ---------- 버튼 ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 32px;
+  border: 1px solid currentColor;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.btn--light {
+  color: #fff;
+}
+
+.btn--light:hover {
+  background: #fff;
+  color: var(--color-dark);
+}
+
+.link-more {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ---------- 상단 영상 ---------- */
+
+.hero {
+  position: relative;
+  height: calc(100svh - var(--header-height));
+  min-height: 480px;
+  max-height: 960px;
+  overflow: hidden;
+  background: var(--color-dark);
+  color: #fff;
+}
+
+.hero__video,
+.hero__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(0, 0, 0, 0.58) 100%);
+}
+
+.hero__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(56px, 11vh, 120px);
+  z-index: 1;
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.hero__eyebrow {
+  color: #fff;
+}
+
+.hero__content {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero__title {
+  margin: 14px 0 12px;
+  font-size: clamp(44px, 7vw, 88px);
+}
+
+.hero__text {
+  margin-bottom: 32px;
+  font-size: clamp(15px, 1.6vw, 17px);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__control {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 24px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+/* ---------- 소개 ---------- */
+
+.intro {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro__title {
+  margin: 18px 0 28px;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.intro__text {
+  color: #55514c;
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 2;
+}
+
+.intro__sign {
+  margin-top: 32px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--color-accent);
+}
+
+/* ---------- 촬영 특징 ---------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  text-align: center;
+}
+
+.feature__num {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--color-accent);
+}
+
+.feature__title {
+  margin: 8px 0 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.feature__text {
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+/* ---------- 함께한 장소 ---------- */
+
+.places {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.places__item {
+  padding: 8px 20px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  font-size: 14px;
+  background: var(--color-surface);
+}
+
+/* ---------- 문의 띠 ---------- */
+
+.cta {
+  padding: clamp(72px, 10vw, 120px) 0;
+  background: var(--color-dark);
+  color: #fff;
+  text-align: center;
+}
+
+.cta__title {
+  margin: 14px 0 16px;
+  font-size: clamp(32px, 4.4vw, 52px);
+}
+
+.cta__text {
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cta .eyebrow {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cta__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- 작가 소개 ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.about__image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about__title {
+  margin: 16px 0 28px;
+  font-size: clamp(32px, 4vw, 48px);
+}
+
+.about__text p + p {
+  margin-top: 18px;
+}
+
+.about__text {
+  color: #55514c;
+  line-height: 2;
+}
+
+/* ---------- 문의 카드 ---------- */
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 32px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  transition: border-color 0.3s var(--ease);
+}
+
+a.contact-card:hover {
+  border-color: var(--color-accent);
+}
+
+.contact-card__label {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.contact-card__value {
+  font-size: 20px;
+}
+
+.contact-card__note {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+
+.notice {
+  max-width: 880px;
+  margin: 40px auto 0;
+  padding: 28px 32px;
+  border: 1px dashed var(--color-line);
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+/* ---------- 모바일 하단 고정 문의 버튼 ---------- */
+
+.float-contact {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--color-dark);
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 960px) {
+  .float-contact {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 760px) {
+  .features,
+  .about,
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: calc(88svh - var(--header-height));
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+}

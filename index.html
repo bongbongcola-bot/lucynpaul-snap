@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>루시앤폴스냅 LucynPaulSnap | 돌스냅</title>
+  <meta name="description" content="아이의 첫 생일을 자연스럽게 기록하는 돌스냅, 루시앤폴스냅입니다.">
+  <meta property="og:title" content="루시앤폴스냅 LucynPaulSnap">
+  <meta property="og:description" content="아이의 첫 생일, 그날의 공기까지 담는 돌스냅">
+  <meta property="og:image" content="assets/images/hero-poster.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html" aria-label="루시앤폴스냅 홈">
+        <span class="logo__name">Lucy &amp; Paul</span>
+        <span class="logo__sub">SNAP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="메뉴 열기">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="주 메뉴">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="dol-snap.html">1st Birthday</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><span class="nav__link nav__link--ko nav__link--soon">상품 안내<span class="nav__badge">준비 중</span></span></li>
+          <li><span class="nav__link nav__link--ko nav__link--soon">예약<span class="nav__badge">준비 중</span></span></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="대표 영상">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">First Birthday Snap</p>
+        <h1 class="title-serif hero__title">Lucy &amp; Paul</h1>
+        <p class="hero__text">아이의 첫 생일, 그날의 공기까지 기록합니다</p>
+        <a class="btn btn--light" href="dol-snap.html">Portfolio</a>
+      </div>
+      <button class="hero__control" type="button" aria-label="영상 일시정지">❚❚</button>
+    </section>
+
+    <section class="section">
+      <div class="container intro">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="title-serif intro__title">한 번뿐인 하루를,<br>가장 자연스러운 얼굴로</h2>
+        <p class="intro__text">
+          아이는 금세 자라고, 첫 생일은 한 번뿐입니다.<br>
+          루시앤폴스냅은 만들어 낸 포즈보다 아이의 표정과 가족이 나누는 눈빛을 기다립니다.
+          돌잡이 앞의 작은 긴장, 할머니 품에서 터지는 웃음, 준비하는 엄마 아빠의 손길까지
+          그날의 이야기를 있는 그대로 담아 드립니다.
+        </p>
+        <p class="intro__sign">Lucy &amp; Paul</p>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Selected Works</p>
+          <h2 class="title-serif section-head__title">1st Birthday</h2>
+        </div>
+        <ul class="gallery" data-gallery data-featured></ul>
+        <div class="gallery-more">
+          <a class="link-more" href="dol-snap.html">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="features">
+          <div class="feature">
+            <p class="feature__num">01</p>
+            <h3 class="feature__title">자연스러운 순간</h3>
+            <p class="feature__text">정해진 포즈 대신 아이의 리듬에 맞춰<br>웃음과 표정이 나오는 순간을 기다립니다.</p>
+          </div>
+          <div class="feature">
+            <p class="feature__num">02</p>
+            <h3 class="feature__title">하루의 이야기</h3>
+            <p class="feature__text">준비하는 모습부터 돌잡이, 가족사진까지<br>그날의 흐름을 순서대로 기록합니다.</p>
+          </div>
+          <div class="feature">
+            <p class="feature__num">03</p>
+            <h3 class="feature__title">따뜻한 색감</h3>
+            <p class="feature__text">시간이 지나도 촌스럽지 않도록<br>담백하고 따뜻한 톤으로 보정합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Places</p>
+          <h2 class="title-serif section-head__title">함께한 장소</h2>
+          <p class="section-head__desc">돌잔치 장소 어디든 찾아갑니다.</p>
+        </div>
+        <ul class="places">
+          <li class="places__item">메리다</li>
+          <li class="places__item">이안</li>
+          <li class="places__item">상춘고택</li>
+          <li class="places__item">다연재</li>
+          <li class="places__item">셀레네하우스</li>
+          <li class="places__item">다소곳</li>
+          <li class="places__item">코트야드</li>
+          <li class="places__item">아산 빌라드</li>
+          <li class="places__item">플레이스 플로라</li>
+          <li class="places__item">산하춘</li>
+          <li class="places__item">라띠움</li>
+          <li class="places__item">트리제이 더테라스</li>
+          <li class="places__item">파티올</li>
+          <li class="places__item">더파티</li>
+          <li class="places__item">비렌티</li>
+          <li class="places__item">허쉬라운지</li>
+          <li class="places__item">모드니룸</li>
+          <li class="places__item">공간유월</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2 class="title-serif cta__title">촬영 문의</h2>
+        <p class="cta__text">날짜와 장소를 알려 주시면 일정을 확인해 드립니다.</p>
+        <div class="cta__actions">
+          <a class="btn btn--light" href="contact.html">문의하기</a>
+          <a class="btn btn--light" href="tel:010-9218-7602">전화하기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="루시앤폴스냅 홈">
+        <span class="logo__name">Lucy &amp; Paul</span>
+        <span class="logo__sub">SNAP</span>
+      </a>
+      <ul class="site-footer__links">
+        <li><a href="https://www.instagram.com/lucynpaul/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://blog.naver.com/lucynpaul_snap" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="tel:010-9218-7602">010-9218-7602</a></li>
+      </ul>
+      <p class="site-footer__copy">© LucynPaulSnap 루시앤폴스냅. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="float-contact" href="contact.html">문의하기</a>
+
+  <script src="js/gallery-data.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/video.js"></script>
+</body>
+</html>
