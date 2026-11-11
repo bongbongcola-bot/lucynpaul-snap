@@ -15,4 +15,5 @@ mkdir -p "$ROOT/assets/video"
 
 swift "$ROOT/scripts/encode-video.swift" "$SRC" "$ROOT/assets/video/hero.mp4" "$START" "$DURATION" 1280 2000000
 ls -lh "$ROOT/assets/video/hero.mp4"
+echo "여러 영상을 이어 붙이려면: swift scripts/montage-video.swift <클립목록.txt> assets/video/hero.mp4"
 echo "첫 화면 정지 이미지(assets/images/hero-poster.jpg)는 영상 첫 장면을 캡처해 직접 바꿔 주세요."
