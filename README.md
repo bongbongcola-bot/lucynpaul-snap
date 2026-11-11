@@ -20,8 +20,7 @@ python3 -m http.server 8000
 | `about.html` | 작가 소개 |
 | `contact.html` | 문의: 카카오톡 채널, 전화, 인스타그램, 블로그 |
 | `reservation.html` | 예약: 절차, 예약 마감 달력, 신청서 링크, 변경·취소·환불 규정 |
-
-메뉴의 상품 안내는 '준비 중'으로 표시되어 있습니다.
+| `products.html` | 상품 안내: 앨범세트·싱글앨범·데이터 구성, 비교표, 추가 상품, 할인, 촬영·보정 안내 (가격은 상담 시 안내) |
 
 ## 폴더 구조
 
@@ -40,6 +39,7 @@ js/
 assets/
   images/dol-snap/full   확대 보기용 사진 (1080x1350)
   images/dol-snap/thumb  격자용 사진 (720x900)
+  images/products/       상품 사진 (기존 홈페이지 상품 이미지)
   video/hero.mp4         메인 상단 영상
 scripts/
   optimize-images.sh     원본 사진을 웹용으로 줄이기
