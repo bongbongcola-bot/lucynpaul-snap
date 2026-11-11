@@ -19,8 +19,9 @@ python3 -m http.server 8000
 | `dol-snap.html` | 돌스냅 갤러리: 장소별 필터, 사진 확대 보기 |
 | `about.html` | 작가 소개 |
 | `contact.html` | 문의: 카카오톡 채널, 전화, 인스타그램, 블로그 |
+| `reservation.html` | 예약: 절차, 예약 마감 달력, 신청서 링크, 변경·취소·환불 규정 |
 
-메뉴의 상품 안내와 예약은 '준비 중'으로 표시되어 있습니다.
+메뉴의 상품 안내는 '준비 중'으로 표시되어 있습니다.
 
 ## 폴더 구조
 
@@ -43,6 +44,10 @@ assets/
 scripts/
   optimize-images.sh     원본 사진을 웹용으로 줄이기
   make-hero-video.sh     상단 영상 만들기
+  montage-video.swift    여러 영상 구간을 페이드로 이어 붙이기
+  google/reservation-setup.gs  예약 신청서·접수 시트·마감 달력을 만드는 Apps Script
+docs/
+  reservation-workflow.md      예약 업무 흐름과 카카오톡 안내 문구
 ```
 
 ## 사진 바꾸기
@@ -50,6 +55,15 @@ scripts/
 1. 원본 사진(4:5 세로, 서명 포함)을 한 폴더에 모읍니다.
 2. `scripts/optimize-images.sh <폴더>`를 실행하면 `dol-01.jpg`부터 차례로 저장됩니다.
 3. `js/gallery-data.js`에 사진마다 한 줄씩 적습니다. `featured: true`를 붙이면 메인 페이지에도 나옵니다.
+
+## 예약 접수 구조
+
+사이트는 정적 페이지라서 예약 데이터는 lucynpaulsnap 구글 계정에 둡니다.
+
+- 신청서(구글 폼) → 응답 시트 '루시앤폴스냅 예약 접수'에 자동 기록, 작가 메일로 알림
+- 시트 '상태'를 **확정**으로 바꾸면 공개 달력 '루시앤폴스냅 촬영 일정'에 '예약 마감'이 자동 표시
+- 상태를 **취소**로 바꾸면 그 날짜에 다른 확정 예약이 없을 때 마감 표시가 지워짐
+- 달력에는 고객 정보를 넣지 않습니다.
 
 ## 사용한 외부 자원
 

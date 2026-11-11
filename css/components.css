@@ -335,3 +335,143 @@ a.contact-card:hover {
     padding: 24px;
   }
 }
+
+/* ---------- 예약 안내 ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  padding: 28px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.step__num {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--color-accent);
+}
+
+.step__title {
+  margin: 8px 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.step__text {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.step__text strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.reserve-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.btn--solid {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.btn--solid:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.calendar-embed {
+  max-width: 880px;
+  margin: 0 auto;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: 0;
+}
+
+.policy {
+  max-width: 880px;
+}
+
+.policy__group {
+  padding: 28px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.policy__title {
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.policy__list {
+  padding-left: 1.1em;
+  list-style: disc;
+  color: #55514c;
+  font-size: 15px;
+}
+
+.policy__list li + li {
+  margin-top: 6px;
+}
+
+.policy__example {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.policy__note {
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.notice a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-embed iframe {
+    height: 460px;
+  }
+}
+
+/* 한글 버튼은 영문 버튼만큼 자간을 벌리지 않는다 */
+.btn--ko {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
