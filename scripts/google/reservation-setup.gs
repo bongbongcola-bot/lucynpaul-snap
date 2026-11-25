@@ -15,6 +15,8 @@
  * 예약금 계좌는 공개 저장소에 올리지 않도록 스크립트 속성 DEPOSIT_ACCOUNT에 넣는다. (예: OO은행 000-0000-0000 예금주)
  * 기존 신청의 영수증은 createReceiptsForExisting()을 한 번 실행해 만든다.
  *
+ * 사이트 예약 달력은 doGet()을 웹 앱(실행: 나, 액세스: 모든 사용자)으로 배포한 주소에서 마감 날짜·시간대만 읽는다.
+ *
  * 이미 만든 폼에 시간대 질문을 넣을 때는 addSlotQuestion()을, 기존 종일 마감 일정을 바꿀 때는 migrateToSlots()를 한 번 실행한다.
  */
 
@@ -244,6 +246,7 @@ function onSheetEdit_(e) {
     if (e.value === '취소' && !hasOtherConfirmed_(rows, headers, date, slot, e.range.getRow() - 2)) {
       existing.forEach((ev) => ev.deleteEvent());
     }
+    CacheService.getScriptCache().remove(BUSY_CACHE_KEY);
   } finally {
     lock.releaseLock();
   }
@@ -271,7 +274,28 @@ function migrateToSlots() {
       created++;
     }
   });
+  CacheService.getScriptCache().remove(BUSY_CACHE_KEY);
   Logger.log('종일 마감 ' + legacy.length + '개 삭제, 시간대 마감 ' + created + '개 생성');
+}
+
+const BUSY_CACHE_KEY = 'busy';
+
+// 사이트 달력용 웹 앱. 고객 정보 없이 마감 날짜와 시간대만 내보낸다. 5분 동안 캐시한다.
+function doGet() {
+  const cache = CacheService.getScriptCache();
+  let json = cache.get(BUSY_CACHE_KEY);
+  if (!json) {
+    const now = Date.now();
+    const busy = calendar_().getEvents(new Date(now - 40 * 864e5), new Date(now + 400 * 864e5))
+      .map((ev) => {
+        const slot = SLOTS.find((s) => s.title === ev.getTitle());
+        return slot && { date: Utilities.formatDate(ev.getStartTime(), TZ, 'yyyy-MM-dd'), slot: slot === SLOTS[0] ? 'am' : 'pm' };
+      })
+      .filter(Boolean);
+    json = JSON.stringify({ busy });
+    cache.put(BUSY_CACHE_KEY, json, 300);
+  }
+  return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
 }
 
 function calendar_() {
