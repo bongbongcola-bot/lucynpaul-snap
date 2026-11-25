@@ -2,3 +2,6 @@
 _work/
 .DS_Store
 .env
+
+# 개인 메모 (Claude Code가 읽는 비공개 지침)
+CLAUDE.local.md

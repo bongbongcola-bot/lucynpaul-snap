@@ -2,9 +2,16 @@
 
 루시앤폴스냅 돌스냅 포트폴리오 사이트. 순수 HTML/CSS/JS, 빌드 도구 없음.
 
-## 실행
+## 실행과 배포
 
-`python3 -m http.server 8000` 후 http://localhost:8000
+- 로컬: `python3 -m http.server 8000` 후 http://localhost:8000
+- 배포: `main`에 푸시하면 GitHub Pages(https://bongbongcola-bot.github.io/lucynpaul-snap/)에 1~2분 뒤 반영된다. `gh api repos/bongbongcola-bot/lucynpaul-snap/pages/builds/latest`로 빌드 상태를 확인한다.
+- 테스트 도구는 없다. 바꾼 페이지를 브라우저에서 PC(1440px)와 모바일(390px)로 열어 확인한다.
+
+## 먼저 읽을 것
+
+- `docs/HANDOFF.md`: 지금까지 한 일, 다음 할 일, 결정해 둔 것
+- `CLAUDE.local.md`: 계정, 예약 시트·캘린더 주소, 마이박스 위치 등 비공개 메모 (로컬에만 있음)
 
 ## 규칙
 
